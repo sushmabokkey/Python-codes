@@ -1,0 +1,17 @@
+from typing import List
+
+
+class Solution:
+    def get_unique_num_count(self,nums:List[int] )->List[int]:
+        l=1
+        for r in range(1,len(nums)):
+            if nums[r] != nums[r-1]:
+                nums[l]=nums[r]
+                l+=1
+
+        return l
+
+h1=Solution()
+nums=[0,1]
+value=h1.get_unique_num_count(nums)
+print(value)
